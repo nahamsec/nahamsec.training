@@ -1,0 +1,40 @@
+server {
+        listen 80 default_server;
+
+        root /var/www/html;
+
+        index index.html;
+
+        server_name _;
+
+        location / {
+                try_files $uri $uri/ /index.php?$query_string;
+        }
+        location ~ \.php$ {
+               include snippets/fastcgi-php.conf;
+               fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+        }
+}
+
+server {
+	listen 80;
+        server_name naham.sec *.naham.sec;
+
+	if ($host = naham.sec ) {
+            return 301 http://www.naham.sec;
+        }
+
+        root /var/www/training/public;
+        index index.php;
+
+        location / {
+                try_files $uri $uri/ /index.php?$query_string;
+        }
+
+        location ~ \.php$ {
+               include snippets/fastcgi-php.conf;
+               fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+        }
+
+}
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/contact.xsl"?>
+<contacts>
+    <contact>
+        <name>ben</name>
+        <email>ben@test.com</email>
+    </contact>
+    <contact>
+        <name>adam</name>
+        <email>adam@test.com</email>
+    </contact>
+    <contact>
+        <name>test</name>
+        <email>test@test.com</email>
+    </contact>
+</contacts>
