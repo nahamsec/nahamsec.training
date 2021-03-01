@@ -6,6 +6,7 @@ RUN apt-get -qq update -y && \
     curl  \
     wget  \
     host  \
+    chromium-browser  \
     nginx \
     mysql-server \
     php-fpm \
