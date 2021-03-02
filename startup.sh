@@ -7,5 +7,6 @@ sleep 5
 mysql < /db.sql
 rm /db.sql
 
+
 while true; do sleep 1; done;
 

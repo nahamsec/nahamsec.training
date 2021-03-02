@@ -8,7 +8,6 @@ RUN apt-get -qq update -y && \
     wget  \
     host  \
     nginx \
-    gdebi \
     mysql-server \
     php-fpm \
     php-pdo \
