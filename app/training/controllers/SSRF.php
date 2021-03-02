@@ -145,7 +145,7 @@ class SSRF
         if( isset($_POST["url"]) ){
             $file = md5( date("U").rand().print_r($_POST,true).print_r($_SERVER,true) ).'.jpg';
             $file_dst = getcwd().'/screenshots/'.$file;
-            system('chromium-browser --headless --disable-gpu --no-sandbox --screenshot='.$file_dst.' '.$_POST["url"] );
+            system('google-chrome-stable --headless --disable-gpu --no-sandbox --screenshot='.$file_dst.' '.$_POST["url"] );
             $data["file"] = $file;
         }
         \View::page('ssrf/lesson2',$data);
@@ -159,7 +159,7 @@ class SSRF
             if (filter_var($_POST["url"], FILTER_VALIDATE_URL)) {
                 $url = escapeshellarg($_POST["url"]);
                 $pdf = md5(microtime().rand().print_r($_SERVER,true));
-                system("chromium-browser --headless --disable-gpu --print-to-pdf=screenshots/".$pdf.".pdf ".$url);
+                system("google-chrome-stable --headless --disable-gpu --print-to-pdf=screenshots/".$pdf.".pdf ".$url);
                 \View::redirect('/screenshots/'.$pdf.'.pdf');
             } else {
                 $data["error"] = 'The URL entered is invalid';
