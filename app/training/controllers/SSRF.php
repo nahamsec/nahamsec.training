@@ -24,7 +24,7 @@ class SSRF
             $url_sp = explode("/",$_POST["url"]);
             $continue = true;
             if( substr($_POST["url"],0,7) == 'http://' || substr($_POST["url"],0,8) == 'https://' ){
-                if( $url_sp[2] == 'localhost' || $url_sp[2] == 'nahamsec.training' || $url_sp[2] == '169.254.169.254' || $url_sp[2] == '142.93.35.49' || substr($url_sp[2],0,4) == '127.' ){
+                if( $url_sp[2] == 'localhost' || $url_sp[2] == 'naham.sec' || $url_sp[2] == '169.254.169.254' || $url_sp[2] == '142.93.35.49' || substr($url_sp[2],0,4) == '127.' ){
                     $continue = false;
                     $data["error"] = 'Only remote URLs are allowed';
                 }
@@ -55,7 +55,7 @@ class SSRF
             $url_sp = explode("/",$_POST["url"]);
             $continue = true;
             if( substr($_POST["url"],0,7) == 'http://' || substr($_POST["url"],0,8) == 'https://' ){
-                if( $url_sp[2] == 'localhost' || $url_sp[2] == 'nahamsec.training' || $url_sp[2] == '142.93.35.49' || substr($url_sp[2],0,4) == '127.' ){
+                if( $url_sp[2] == 'localhost' || $url_sp[2] == 'naham.sec' || $url_sp[2] == '142.93.35.49' || substr($url_sp[2],0,4) == '127.' ){
                     $continue = false;
                     $data["error"] = 'Only remote URLs are allowed';
                 }
@@ -93,10 +93,10 @@ class SSRF
             $continue = true;
             if( substr($_POST["url"],0,7) == 'http://' || substr($_POST["url"],0,8) == 'https://' ){
                 $url_sp = explode("/",$_POST["url"]);
-                if( $url_sp[2] == 'nahamsec.training' || substr($url_sp[2],-18,18) == '.nahamsec.training' ){
+                if( $url_sp[2] == 'naham.sec' || substr($url_sp[2],-18,18) == '.naham.sec' ){
                 }else{
                     $continue = false;
-                    $data["error"] = 'Only URLs from the nahamsec.training domain are allowed!';
+                    $data["error"] = 'Only URLs from the naham.sec domain are allowed!';
                 }
             }else{
                 $continue = false;

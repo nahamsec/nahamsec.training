@@ -32,7 +32,7 @@ class RCE
     }
 
     public static function lesson1StockCheck(){
-        echo exec('curl http://rce.nahamsec.training/stock/?id='.$_GET["product_id"]);
+        echo exec('curl -H "Host: rce.naham.sec" http://127.0.0.1/stock/?id='.$_GET["product_id"]);
     }
 
     public static function lesson1Stock(){
