@@ -6,6 +6,7 @@ RUN apt-get -qq update -y && \
     apt-get -y -qq install \
     curl  \
     wget  \
+    gnupg  \
     host  \
     nginx \
     mysql-server \
