@@ -14,7 +14,7 @@ class CSRF
     }
 
     public static function logout(){
-	setcookie('token',null,time()-3600,'/; Secure; SameSite=None');
+	setcookie('token',null,time()-3600,'/');
 	\View::redirect('/');
     }
 
@@ -165,11 +165,11 @@ class CSRF
         if( isset($_POST["username"],$_POST["password"]) ){
             $error = true;
             if( $_POST["username"] === 'admin' && $users["admin"]["password"] == $_POST["password"] ){
-		setcookie('token','9738EFC3561120092F7AB66514547475',time()+3600,'/; Secure; SameSite=None');
+		setcookie('token','9738EFC3561120092F7AB66514547475',time()+3600,'/');
 		\View::redirect('/');
             }
             if( $_POST["username"] === 'ben' && $users["ben"]["password"] == $_POST["password"] ){
-	        setcookie('token','649EFEE221D752E4E943D7811B95408E',time()+3600,'/; Secure; SameSite=None');
+	        setcookie('token','649EFEE221D752E4E943D7811B95408E',time()+3600,'/');
                 \View::redirect('/');
             }
         }
