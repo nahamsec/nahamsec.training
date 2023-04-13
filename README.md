@@ -12,7 +12,7 @@ You must have docker installed, this can simply be installed using `apt install 
 docker build -t nahamsec .
 `
 
-`docker run -d -p 80:80 nahamsec`
+`docker run -p 80:80 nahamsec`
 
 #### Add the following entries to your /etc/hosts file
 
@@ -46,6 +46,11 @@ docker build -t nahamsec .
 127.0.0.1          rce3.naham.sec
 
 Now you can visit http://www.naham.sec in your browser to view the list of challenges
+
+##### To Disable The Webserver
+
+`service docker stop
+`
 
 ##### Credits
 
